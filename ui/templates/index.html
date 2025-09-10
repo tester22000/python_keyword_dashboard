@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4">
+    <div class="flex-1">
+        <div class="bg-white p-4 rounded-md shadow">
+            <h2 class="text-xl font-bold mb-4">조회 조건 설정</h2>
+            <div class="flex flex-col md:flex-row items-center space-y-2 md:space-y-0 md:space-x-4">
+                <div class="w-full md:w-1/3">
+                    <label for="site-select" class="block text-sm font-medium text-gray-700">사이트</label>
+                    <select id="site-select" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
+                        <option value="">사이트를 선택하세요</option>
+                        </select>
+                </div>
+                <div class="w-full md:w-1/3">
+                    <label for="search-input" class="block text-sm font-medium text-gray-700">검색어</label>
+                    <input type="text" id="search-input" placeholder="검색어를 입력하세요" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
+                </div>
+                <div class="w-full md:w-1/3">
+                    <label for="date-input" class="block text-sm font-medium text-gray-700">조회일</label>
+                    <input type="date" id="date-input" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
+                </div>
+            </div>
+        </div>
+
+        <div class="w-full mt-4 bg-white p-4 rounded-md shadow">
+            <div class="flex justify-between items-center mb-4">
+                <h2 class="text-xl font-bold">리스트</h2>
+                <div id="delete-button-container" class="hidden">
+                    <button id="delete-button" class="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded">
+                        선택 항목 삭제
+                    </button>
+                </div>
+            </div>
+            <div id="link-list" class="space-y-4">
+                </div>
+        </div>
+    </div>
+
+    <div class="mt-4 md:w-1/4">
+        <div class="bg-white p-4 rounded-md shadow sticky top-4">
+            <h2 class="text-xl font-bold mb-4">키워드</h2>
+            <div class="mb-4">
+                <label for="keyword-search-input" class="sr-only">키워드 검색</label>
+                <input type="text" id="keyword-search-input" placeholder="키워드 검색" class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
+                <input type="text" id="search-keyword" class="hidden">
+            </div>
+            <ul id="keyword-list" class="space-y-2 max-h-96 overflow-y-auto">
+                </ul>
+        </div>
+    </div>
+</div>
+{% endblock %}

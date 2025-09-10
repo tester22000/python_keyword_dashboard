@@ -1,0 +1,6 @@
+requests
+beautifulsoup4
+PyYAML
+ollama
+flask
+google-generativeai

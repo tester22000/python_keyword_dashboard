@@ -1,0 +1,33 @@
+llms:
+  - type: "ollama"
+    model: "gemma3:12b"
+    enable: false
+    chunk: 200
+    prompt_template: |
+      Extract the key word that represent the core content 
+      from the following content and assign a relevance weight score of 1 to 100 to each extracted keyword. 
+      Respond in the following JSON array format only: 
+
+      when: keyword is a and a's score is 10, and keyword is b and  b's score is 55 and keyword is c and c's score is 30.
+      Json output:
+      [
+        {'keyword': 'b', 'score': '55'}, 
+        {“keyword”: 'c', 'score': '30'}, 
+        {“keyword”: 'a', 'score': '10'}
+      ]
+  - type: "gemini"
+    model: "gemini-2.5-flash-lite"
+    chunk: 1000
+    enable: false
+    prompt_template: |
+      Extract the key word that represent the core content 
+      from the following content and assign a relevance weight score of 1 to 100 to each extracted keyword. 
+      Respond in the following JSON array format only: 
+
+      when: keyword is a and a's score is 10, and keyword is b and  b's score is 55 and keyword is c and c's score is 30.
+      Json output:
+      [
+        {'keyword': 'b', 'score': '55'}, 
+        {“keyword”: 'c', 'score': '30'}, 
+        {“keyword”: 'a', 'score': '10'}
+      ]

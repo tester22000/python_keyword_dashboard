@@ -1,0 +1,3 @@
+from app.collector.base_collector import LinkTitle, BaseCollector
+from app.collector.paging_link_title_collector import PagingLinkTitleCollector
+from app.collector.one_page_link_title_collector import OenPageLinkTitleCollector

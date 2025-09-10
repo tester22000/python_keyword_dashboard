@@ -1,0 +1,18 @@
+sources:
+  - name: "hacker_news"
+    type: "paging_link_title_collector"
+    url: "https://news.ycombinator.com/"
+    page_template: "?p={page}"
+    page_count: 3
+    a_selector: "span.titleline>a"
+    rate_limit: 1
+    exclude: ""
+
+  - name: "lobste_rs"
+    type: "paging_link_title_collector"
+    url: "https://lobste.rs/"
+    page_template: "page/{page}"
+    page_count: 3
+    a_selector: "span.link>a.u-url"
+    rate_limit: 1
+    exclude: ""
